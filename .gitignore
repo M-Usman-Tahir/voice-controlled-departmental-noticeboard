@@ -1,0 +1,11 @@
+output/
+__pycache__/
+
+venv/
+LOCAL/
+
+*.csv
+*.xlsx
+
+EncCre.txt
+Test.py
