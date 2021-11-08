@@ -18,7 +18,10 @@ for root, dirs, files in os.walk(os.getcwd()):
                 os.mkdir(os.path.join(NewPath, i))
             except:
                 pass
-            with open("{}.txt".format(os.path.join(NewPath, i, "CREs")), "w") as Cre:
-                Cre.write("Name: {}".format(file1[file1["Reg_No"]==i]["Name"]))
+            try:
+                with open("{}.txt".format(os.path.join(NewPath, i, "CREs")), "w") as Cre:
+                    Cre.write("Name: {}".format(file1[file1["Reg_No"]==i]["Name"]))
+            except:
+                pass
                             
     break
