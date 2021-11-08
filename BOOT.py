@@ -13,3 +13,5 @@ for p in Paths:
         )
     except FileExistsError:
         continue
+
+import init
