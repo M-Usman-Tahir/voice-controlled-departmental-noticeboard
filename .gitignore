@@ -6,6 +6,7 @@ LOCAL/
 
 *.csv
 *.xlsx
+*-Details/
 
 EncCre.txt
 Test.py
