@@ -20,3 +20,15 @@ def speak(engine):
             return ""
         finally:
             engine.runAndWait()
+            
+def IfIn(words, text, opr="or"):
+    if opr=="or":
+        for word in words:
+            if word in text:
+                return True
+        return False
+    for word in words:
+        if word in text:
+            continue
+        return False
+    return True
