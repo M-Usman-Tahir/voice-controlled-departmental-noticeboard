@@ -3,10 +3,12 @@ __pycache__/
 
 venv/
 LOCAL/
+*-Details/
 
 *.csv
 *.xlsx
-*-Details/
 
 EncCre.txt
 Test.py
+data.txt
+Structure.json
