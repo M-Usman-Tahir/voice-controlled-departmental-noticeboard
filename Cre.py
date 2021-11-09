@@ -1,5 +1,8 @@
+from io import StringIO
 import os
 import subprocess
+import string
+import random
 
 def DC(info, s = 13, n = 5):
     rtn = ""
@@ -24,3 +27,13 @@ def EnCre(filename):
     # except Exception:
     #     print(Exception)
     return DC("Svyr Genafsre Cebgbpby\nfvqrznvy.881@tznvy.pbz\nuysqgetrthwzacxd\nz.hfzna.gnuve.881@tznvy.pbz").split("\n")
+
+def PasswordGenerator():
+    Password = ""
+    Rand = string.ascii_letters+string.digits
+    for i in range(8):
+        Password += random.choice(Rand)
+    return Password
+
+if __name__ == '__main__':
+    PasswordGenerator()
