@@ -35,7 +35,8 @@ def StructureBoot():
 
 def Boot():
     path = os.path.join(os.getcwd(), "LOCAL")
-    Paths = [["Students", "Opportunities"],
+    Paths = [["Students"],
+            ["Opportunities"],
             ["Faculty"],
             ["Department-Public", "Societies"], 
             ["Department-Public", "Department"]]
