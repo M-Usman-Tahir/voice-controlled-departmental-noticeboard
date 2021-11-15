@@ -2,6 +2,16 @@ import string
 import random
 
 def DC(info, s = 13, n = 5):
+    """[File Encryptor/Decryptor]
+
+    Args:
+        info ([string]): [The data to be encrypted or decrypted]
+        s (int, optional): [The decipher key to string characters in data]. Defaults to 13.
+        n (int, optional): [The decipher key to int characters in data]. Defaults to 5.
+
+    Returns:
+        [string]: [The data after encryption or decryption]
+    """
     rtn = ""
     for l in info:
         if l.isalpha():
