@@ -36,6 +36,11 @@ def EnCre(filename):
     return DC("Svyr Genafsre Cebgbpby\nfvqrznvy.881@tznvy.pbz\nuysqgetrthwzacxd\nz.hfzna.gnuve.881@tznvy.pbz").split("\n")
 
 def PasswordGenerator():
+    """[It generates random passwords for the enw users]
+
+    Returns:
+        [string]: [the alphanumeric random password]
+    """
     Password = ""
     Rand = string.ascii_letters+string.digits
     for i in range(8):
