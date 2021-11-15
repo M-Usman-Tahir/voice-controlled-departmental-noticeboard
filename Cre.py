@@ -42,7 +42,6 @@ def EnCre(filename):
             return DC(file.read()).split('\n')
     except Exception:
         print(Exception)
-    # return DC("Svyr Genafsre Cebgbpby\nfvqrznvy.881@tznvy.pbz\nuysqgetrthwzacxd\nz.hfzna.gnuve.881@tznvy.pbz").split("\n")
 
 def PasswordGenerator():
     """[It generates random passwords for the enw users]
