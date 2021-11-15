@@ -48,7 +48,8 @@ def Boot():
             )
         except FileExistsError:
             continue
+    StructureBoot()
 
 if __name__ == '__main__':
     Boot()
-    StructureBoot()
+    # StructureBoot()
