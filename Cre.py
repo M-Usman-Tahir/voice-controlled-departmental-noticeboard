@@ -27,12 +27,12 @@ def DC(info, s = 13, n = 5):
             rtn += str(l)
     return rtn
 
-# def EnCre(filename):
-    # try:
-    #     with open(filename, "r") as file:
-    #         return DC(file.read()).split('\n')
-    # except Exception:
-    #     print(Exception)
+def EnCre(filename):
+    try:
+        with open(filename, "r") as file:
+            return DC(file.read()).split('\n')
+    except Exception:
+        print(Exception)
     # return DC("Svyr Genafsre Cebgbpby\nfvqrznvy.881@tznvy.pbz\nuysqgetrthwzacxd\nz.hfzna.gnuve.881@tznvy.pbz").split("\n")
 
 def PasswordGenerator():
