@@ -27,13 +27,13 @@ def DC(info, s = 13, n = 5):
             rtn += str(l)
     return rtn
 
-def EnCre(filename):
+# def EnCre(filename):
     # try:
     #     with open(filename, "r") as file:
     #         return DC(file.read()).split('\n')
     # except Exception:
     #     print(Exception)
-    return DC("Svyr Genafsre Cebgbpby\nfvqrznvy.881@tznvy.pbz\nuysqgetrthwzacxd\nz.hfzna.gnuve.881@tznvy.pbz").split("\n")
+    # return DC("Svyr Genafsre Cebgbpby\nfvqrznvy.881@tznvy.pbz\nuysqgetrthwzacxd\nz.hfzna.gnuve.881@tznvy.pbz").split("\n")
 
 def PasswordGenerator():
     """[It generates random passwords for the enw users]
@@ -46,6 +46,3 @@ def PasswordGenerator():
     for i in range(8):
         Password += random.choice(Rand)
     return Password
-
-if __name__ == '__main__':
-    PasswordGenerator()
