@@ -43,13 +43,10 @@ def Boot():
             
     for p in Paths:
         try:
-            os.makedirs(
-                os.path.join(path, *p)
-            )
+            os.makedirs(os.path.join(path, *p))
         except FileExistsError:
             continue
     StructureBoot()
 
 if __name__ == '__main__':
     Boot()
-    # StructureBoot()
