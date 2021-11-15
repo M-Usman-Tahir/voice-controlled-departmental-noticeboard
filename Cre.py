@@ -28,6 +28,15 @@ def DC(info, s = 13, n = 5):
     return rtn
 
 def EnCre(filename):
+    """[Reads the encryted credentials from the file
+    and return after decrypting them in the fixed order]
+
+    Args:
+        filename ([string]): [the path/name of the file containing encrypted credentials]
+
+    Returns:
+        [string]: [Decrypted ordered credentials]
+    """
     try:
         with open(filename, "r") as file:
             return DC(file.read()).split('\n')
