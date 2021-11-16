@@ -54,7 +54,7 @@ def OTPmail(OTP):
         MSG = str(OTP).join(msgS)
     return (MSG, "html")
 
-def sendMail(body, SenderName = "Computer Engineering Departmental Notification", subject="", reciever=None):
+def sendMail(body, SenderName = "Computer Engineering Departmental Notification", subject="", recievers=None):
     """[It sends the mail from the site to reciever]
 
     Args:
@@ -69,19 +69,22 @@ def sendMail(body, SenderName = "Computer Engineering Departmental Notification"
     Sender_Name = SenderName
     sender_email = CREs[1]
     password = CREs[2]
-    receiver_email = CREs[3] if reciever == None else reciever
-    message = MIMEMultipart("alternative")
-    message["From"] = Sender_Name
-    message["To"] = receiver_email
-    message["Subject"] = subject
-    MSG = MIMEText(body[0], body[1])
-    message.attach(MSG)
-    context = ssl.create_default_context()
-    try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-            server.login(sender_email, password)
-            server.sendmail(sender_email, receiver_email, message.as_string())
-        return True
-    except Exception as e:
-        # print("MAIL IS NOT SENT BECAUSE:", e)
-        return False
+    receiver_email = CREs[3] if recievers == None else recievers
+    if not isinstance(receiver_email, (list, tuple)):
+        receiver_email = [receiver_email]
+    for receiver in receiver_email:
+        message = MIMEMultipart("alternative")
+        message["From"] = Sender_Name
+        message["To"] = receiver
+        message["Subject"] = subject
+        MSG = MIMEText(body[0], body[1])
+        message.attach(MSG)
+        context = ssl.create_default_context()
+        try:
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+                server.login(sender_email, password)
+                server.sendmail(sender_email, receiver, message.as_string())
+                print("Mail is sent to", receiver)
+        except Exception as e:
+            print("MAIL IS NOT SENT BECAUSE:", e)
+        # return True
