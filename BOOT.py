@@ -2,6 +2,7 @@ import pandas as pd
 import os
 from Cre import PasswordGenerator
 
+
 def StructureBoot():
     CurrentDir = os.getcwd()
     os.chdir(os.path.join(os.getcwd(), "Student-Details"))
