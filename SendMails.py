@@ -54,7 +54,7 @@ def OTPmail(OTP):
         MSG = str(OTP).join(msgS)
     return (MSG, "html")
 
-def sendMail(body, subject="", reciever=None):
+def sendMail(body, SenderName = "Computer Engineering Departmental Notification", subject="", reciever=None):
     """[It sends the mail from the site to reciever]
 
     Args:
@@ -66,7 +66,7 @@ def sendMail(body, subject="", reciever=None):
         [boolean]: [If mail is sent it will be true and vice versa]
     """
     CREs = EnCre("EncCre.txt")
-    Sender_Name = CREs[0]
+    Sender_Name = SenderName
     sender_email = CREs[1]
     password = CREs[2]
     receiver_email = CREs[3] if reciever == None else reciever
