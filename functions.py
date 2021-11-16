@@ -1,4 +1,4 @@
 from SendMails import OTPmail
-from sendmails import *
-from texttospeech import *
-from boot import *
+from SendMails import *
+from textToSpeech import *
+from BOOT import *
