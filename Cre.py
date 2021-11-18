@@ -35,7 +35,7 @@ def EnCre(filename):
         filename ([string]): [the path/name of the file containing encrypted credentials]
 
     Returns:
-        [string]: [Decrypted ordered credentials]
+        [string]: [Decrypted & ordered credentials]
     """
     try:
         with open(filename, "r") as file:
@@ -44,10 +44,10 @@ def EnCre(filename):
         print(Exception)
 
 def PasswordGenerator():
-    """[It generates random passwords for the enw users]
+    """[It generates random passwords for the new users]
 
     Returns:
-        [string]: [the alphanumeric random password]
+        [string]: [the alphanumeric random password of the length of 8 characters]
     """
     Password = ""
     Rand = string.ascii_letters+string.digits
