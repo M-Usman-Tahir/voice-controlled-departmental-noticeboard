@@ -29,7 +29,8 @@ def DC(info, s = 13, n = 5):
 
 def EnCre(filename):
     """[Reads the encryted credentials from the file
-    and return after decrypting them in the fixed order]
+    and returns a string of those credentials after
+    decrypting them in the fixed order]
 
     Args:
         filename ([string]): [the path/name of the file containing encrypted credentials]
