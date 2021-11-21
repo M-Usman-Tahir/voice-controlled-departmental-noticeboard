@@ -3,7 +3,7 @@ __pycache__/
 
 venv/
 LOCAL/
-*-Details/
+Details/
 
 *.csv
 *.xlsx
