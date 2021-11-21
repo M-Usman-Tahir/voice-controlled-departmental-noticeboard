@@ -1,6 +1,6 @@
-    """[Gives path to the system for the modules
-        to import other modules or files efficiently]
-    """
+"""[Gives path to the system for the modules
+    to import other modules or files efficiently]
+"""
 
 import sys
 import os

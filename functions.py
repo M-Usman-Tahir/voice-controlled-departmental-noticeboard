@@ -1,6 +1,6 @@
-    """[Node for all modules,
-        Takes all funstions here for the main file]
-    """
+"""[Node for all modules,
+    Takes all funstions here for the main file]
+"""
 
 from SysPaths import *
 from textToSpeech import * # imports speech_recognition as sr
