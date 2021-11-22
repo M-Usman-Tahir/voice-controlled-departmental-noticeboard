@@ -1,6 +1,6 @@
 import pandas as pd
-import os
-from Cre import PasswordGenerator
+from Cre import *
+from BootMails import *
 
 
 def StructureBoot(part, check="Reg_No"):
@@ -29,8 +29,11 @@ def StructureBoot(part, check="Reg_No"):
                         Password = PasswordGenerator()
                         with open("{}.txt".format(os.path.join(NewPath, i, "CREs")), "w") as Cre:
                             Data = "Name: {}\nRoll_Number: {}\nEmail: {}\nPasswaord: {}\n".format(Name, RollNum, Email, Password)
-                            Cre.write(Data)
-                            # ! SendMail(Data)
+                            Cre.write(DC(Data))
+                            SendBootCre(Data, Email, Topic="Student")
+                            os.chdir(CurrentDir)
+                            return
+                        
                     elif part == "Faculty":
                         Name = i
                         Email = list(file1[file1[check]==i]["Email"])[0]
@@ -39,10 +42,10 @@ def StructureBoot(part, check="Reg_No"):
                         Subjects = list(file1[file1[check]==i]["Subjects"])[0]
                         with open("{}.txt".format(os.path.join(NewPath, i, "CREs")), "w") as Cre:
                             Data = "Name: {}\nPosition: {}\nEmail: {}\nPasswaord: {}\nSubjects: {}\n".format(Name, Position, Email, Password, Subjects)
-                            Cre.write(Data)
-                            # ! SendMail(Data)
-                except:
-                    print(i)                 
+                            Cre.write(DC(Data))
+                            # ! SendBootCre(Data, Email, Topic="Teacher")
+                except Exception as e:
+                    print(i, e)                 
         break
     os.chdir(CurrentDir)
 
