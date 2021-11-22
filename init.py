@@ -5,3 +5,5 @@ from functions import *
     # BOOT {os, pandas as pd, PasswordGenerator}
     # BootMails {SendMails}
 # }
+
+Boot()
