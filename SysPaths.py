@@ -7,3 +7,4 @@ import os
 sys.path.insert(1, os.path.join(sys.path[0], "Mails"))
 sys.path.insert(1, os.path.join(sys.path[0], "Authentication"))
 TemplatesPath = os.path.join(sys.path[0], "templates")
+
