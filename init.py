@@ -1,3 +1,4 @@
+from Authentication.OpenFile import OPEN
 from functions import * 
 # Imports {
     # sys 
@@ -7,3 +8,5 @@ from functions import *
 # }
 
 Boot()
+print("Opening the public Notifications...")
+OPEN(os.path.join("Notis", "Noti.jpeg"))
