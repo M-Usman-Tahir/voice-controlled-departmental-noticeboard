@@ -6,12 +6,12 @@ from BootMails import *
 def StructureBoot(part, check="Reg_No"):
     CurrentDir = os.getcwd()
     os.chdir(os.path.join(os.getcwd(), "Details", part+"-Details"))
-
+    
     for root, dirs, files in os.walk(os.getcwd()):
         for name in files:
             file1 = pd.read_csv(name)
             NewPath = os.path.join(CurrentDir, "LOCAL", part)
-            NewPath = os.path.join(NewPath, "Session-{}".format(file1[check].iloc[2].split("-")[0])) if part=="Student" else NewPath
+            NewPath = os.path.join(NewPath, "Session-18") if part=="Student" else NewPath #.format(file1[check].iloc[2].split("-")[0])
             try:
                 os.mkdir(NewPath)
             except FileExistsError:
@@ -31,8 +31,6 @@ def StructureBoot(part, check="Reg_No"):
                             Data = "Name: {}\nRoll_Number: {}\nEmail: {}\nPasswaord: {}\n".format(Name, RollNum, Email, Password)
                             Cre.write(DC(Data))
                             SendBootCre(Data, Email, Topic="Student")
-                            os.chdir(CurrentDir)
-                            return
                         
                     elif part == "Faculty":
                         Name = i
