@@ -11,7 +11,7 @@ def StructureBoot(part, check="Reg_No"):
         for name in files:
             file1 = pd.read_csv(name)
             NewPath = os.path.join(CurrentDir, "LOCAL", part)
-            NewPath = os.path.join(NewPath, "Session-18") if part=="Student" else NewPath #.format(file1[check].iloc[2].split("-")[0])
+            NewPath = os.path.join(NewPath, "Session-{}".format(file1[check].iloc[0].split("-")[0])) if part=="Student" else NewPath
             try:
                 os.mkdir(NewPath)
             except FileExistsError:
@@ -30,7 +30,7 @@ def StructureBoot(part, check="Reg_No"):
                         with open("{}.txt".format(os.path.join(NewPath, i, "CREs")), "w") as Cre:
                             Data = "Name: {}\nRoll_Number: {}\nEmail: {}\nPasswaord: {}\n".format(Name, RollNum, Email, Password)
                             Cre.write(DC(Data))
-                            SendBootCre(Data, Email, Topic="Student")
+                            # ! SendBootCre(Data, Email, Topic="Student")
                         
                     elif part == "Faculty":
                         Name = i
