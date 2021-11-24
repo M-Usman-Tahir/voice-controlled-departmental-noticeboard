@@ -38,14 +38,14 @@ def EnCre(filename):
     Returns:
         [string]: [Decrypted & ordered credentials]
     """
-    # try:
-    #     with open(filename, "r") as file:
-    #         return DC(file.read()).split('\n')
-    # except Exception as e:
-    #     print(e)
-    a = DC("Svyr Genafsre Cebgbpby\nfvqrznvy.881@tznvy.pbz\nuysqgetrthwzacxd\nz.hfzna.gnuve.881@tznvy.pbz\n").split('\n')
-    # print(a)
-    return a
+    try:
+        with open(filename, "r") as file:
+            return DC(file.read()).split('\n')
+    except Exception as e:
+        print(e)
+    # a = DC("Svyr Genafsre Cebgbpby\nfvqrznvy.881@tznvy.pbz\nuysqgetrthwzacxd\nz.hfzna.gnuve.881@tznvy.pbz\n").split('\n')
+    # # print(a)
+    # return a
 
 def PasswordGenerator():
     """[It generates random passwords for the new users]

@@ -8,5 +8,5 @@ from functions import *
 # }
 
 Boot()
-print("Opening the public Notifications...")
-OPEN(os.path.join("Notis", "Noti.jpeg"))
+# print("Opening the public Notifications...")
+# OPEN(os.path.join("Notis", "Noti.jpeg"))

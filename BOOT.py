@@ -30,7 +30,10 @@ def StructureBoot(part, check="Reg_No"):
                         with open("{}.txt".format(os.path.join(NewPath, i, "CREs")), "w") as Cre:
                             Data = "Name: {}\nRoll_Number: {}\nEmail: {}\nPasswaord: {}\n".format(Name, RollNum, Email, Password)
                             Cre.write(DC(Data))
-                            # ! SendBootCre(Data, Email, Topic="Student")
+                            os.chdir(CurrentDir)    # To stop after sending one Mail only
+                            SendBootCre(Data, Email, Topic="Student")
+                            os.chdir(NewPath)
+                            
                         
                     elif part == "Faculty":
                         Name = i
