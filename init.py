@@ -1,4 +1,3 @@
-from Authentication.OpenFile import OPEN
 from functions import * 
 # Imports {
     # sys 
