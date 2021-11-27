@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 import sys
  
-path = sys.path[0]
+path = os.path.join(sys.path[0], "LoginFaces")
 images = []
 classNames = []
 myList = [x for x in os.listdir(path) if '.jpg' in x]
