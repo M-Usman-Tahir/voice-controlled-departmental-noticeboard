@@ -25,8 +25,9 @@ def findEncodings(images):
 def Login(ID):
     with open('LoginRecord.csv','a') as f:
         now = datetime.now()
+        dateStr = now.strftime('%d-%m-%y')
         dtString = now.strftime('%H:%M:%S')
-        f.writelines(f'{ID},{dtString}\n')
+        f.writelines(f'{ID},{dtString},{dateStr}\n')
             
  
 encodeListKnown = findEncodings(images)
