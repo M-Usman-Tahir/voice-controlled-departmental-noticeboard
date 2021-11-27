@@ -8,6 +8,7 @@ Details/
 *.csv
 *.xlsx
 *.jpeg
+*.jpg
 
 EncCre.txt
 Test.py
