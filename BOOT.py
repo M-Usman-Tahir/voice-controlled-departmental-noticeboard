@@ -31,7 +31,7 @@ def StructureBoot(part, check="Reg_No"):
                             Data = "Name: {}\nRoll_Number: {}\nEmail: {}\nPasswaord: {}\n".format(Name, RollNum, Email, Password)
                             Cre.write(DC(Data))
                             # os.chdir(CurrentDir)
-                            # SendBootCre(Data, Email, Topic="Student")
+                            # ! SendBootCre(Data, Email, Topic="Student")
                             # os.chdir(NewPath)
                             
                         
@@ -44,7 +44,10 @@ def StructureBoot(part, check="Reg_No"):
                         with open("{}.txt".format(os.path.join(NewPath, i, "CREs")), "w") as Cre:
                             Data = "Name: {}\nPosition: {}\nEmail: {}\nPasswaord: {}\nSubjects: {}\n".format(Name, Position, Email, Password, Subjects)
                             Cre.write(DC(Data))
+                            # os.chdir(CurrentDir)
                             # ! SendBootCre(Data, Email, Topic="Teacher")
+                            # os.chdir(NewPath)
+                            
                 except Exception as e:
                     print(i, e)                 
         break
