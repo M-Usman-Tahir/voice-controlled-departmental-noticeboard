@@ -4,6 +4,7 @@ import face_recognition
 import os
 from datetime import datetime
 import sys
+from SysPaths import *
  
 def findEncodings(images):
     encodeList = []
@@ -18,7 +19,7 @@ def TimeSec():
     return now.second+(now.minute*60)+(now.hour*60*60)
 
 def Login(ID):
-    with open('LoginRecord.csv','a') as f:
+    with open(os.path.join(AuthPath,'LoginRecord.csv'),'a') as f:
         now = datetime.now()
         dateStr = now.strftime('%d-%m-%y')
         dtString = now.strftime('%H:%M:%S')
@@ -26,7 +27,8 @@ def Login(ID):
 
 def detectFace():
     name = "Not Found"
-    path = os.path.join(sys.path[0], "LoginFaces")
+    path = os.path.join(AuthPath, "LoginFaces")
+    print(path)
     images = []
     classNames = []
     myList = [x for x in os.listdir(path) if '.jpg' in x]
