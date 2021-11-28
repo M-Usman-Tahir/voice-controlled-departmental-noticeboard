@@ -1,13 +1,6 @@
 import os
 from SysPaths import *
 
-# Cats=  ["Students", 
-#         "Faculty",
-#         "Public",
-#         "Opportunity"]
-# StudentSession = os.listdir(StudentPath)
-# FacultyMembers = os.listdir(FacultyPath)
-
 def FunList(List):
     rtnList = []
     for i in range(len(List)):
@@ -33,5 +26,3 @@ def AskNoti():
 
 if __name__ == '__main__':
     AskNoti()
-    # print(GetPath())
-    # pass
