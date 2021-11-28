@@ -2,9 +2,9 @@ import os
 from SysPaths import *
 
 def FunList(List):
-    rtnList = []
+    rtnList = "\n"
     for i in range(len(List)):
-        rtnList.append(f"{i+1} - {List[i]}")
+        rtnList += f"{i+1} - {List[i]}\n"
     return rtnList
 
 def GetPath(path = LocalPath):
