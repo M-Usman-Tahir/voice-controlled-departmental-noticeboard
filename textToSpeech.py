@@ -1,5 +1,9 @@
 import speech_recognition as sr
 
+def say(engine, text):
+    engine.say(text)
+    engine.runAndWait()
+
 def speak(engine):
     """[It recognizes the speech and converts into the text.
     It takes in the pyttsx3 engine to speak out the errors if encountered.]
