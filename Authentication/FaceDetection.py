@@ -13,6 +13,10 @@ def findEncodings(images):
         encodeList.append(encode)
     return encodeList
 
+def TimeSec():
+    now = datetime.now()
+    return now.second+(now.minute*60)+(now.hour*60*60)
+
 def Login(ID):
     with open('LoginRecord.csv','a') as f:
         now = datetime.now()
@@ -20,7 +24,8 @@ def Login(ID):
         dtString = now.strftime('%H:%M:%S')
         f.writelines(f'{ID},{dtString},{dateStr}\n')
 
-def detectFaces():
+def detectFace():
+    name = "Not Found"
     path = os.path.join(sys.path[0], "LoginFaces")
     images = []
     classNames = []
@@ -35,7 +40,9 @@ def detectFaces():
     
     cap = cv2.VideoCapture(0)
     notMatched = True
-    while notMatched:
+    initial = TimeSec()
+    Timer = True
+    while notMatched and Timer:
         success, img = cap.read()
         imgS = cv2.resize(img,(0,0),None,0.25,0.25)
         imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
@@ -60,5 +67,6 @@ def detectFaces():
                 break
             
         cv2.imshow('Webcam',img)
-        cv2.waitKey(100)
+        cv2.waitKey(1)
+        Timer = TimeSec()-initial<5
     return name
