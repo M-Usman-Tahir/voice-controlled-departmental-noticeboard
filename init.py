@@ -7,7 +7,7 @@ from functions import *
     # BootMails {SendMails}
     # OpenFile
 # }
-if os.path.exists(os.getcwd(), "LOCAL"):
+if os.path.exists(os.path.join(os.getcwd(), "LOCAL")):
     Boot()
 else:
     Bool = input("Do you want to reboot the system (Y/N): ").lower()
@@ -23,8 +23,8 @@ engine.setProperty('voice', voices[1].id)
 def Start():
     engine.say("Waiting for you command!")
     engine.runAndWait()
-    text = speak(engine)
-    # text = "scan"
+    # text = speak(engine)
+    text = "scan"
     print(text)
     Command(engine, text)
     
