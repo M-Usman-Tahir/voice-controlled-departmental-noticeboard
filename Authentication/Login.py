@@ -5,6 +5,8 @@
 import SysPaths as SP
 import os
 from OpenFile import *
+from textToSpeech import *
+from init import engine
 
 def FunList(List):
     rtnList = "\n"
@@ -24,7 +26,9 @@ def LogIN(name):
             print(FunList(dirs))
             print("Enter the Number of notification to see: ")
             TEXT = speak(engine)
+            print(TEXT)
             N=getNum(TEXT)
+            print(N)
             if N == 0:
                 break
             OPEN(os.path.join(path, dirs[N-1]))
@@ -45,7 +49,7 @@ numbers = {"one":1,
 def getNum(text):
     for i in numbers:
         if i in text:
-            return i
+            return numbers[i]
 
 if __name__ == '__main__':
     LogIN("2019-CE-34")
