@@ -1,3 +1,4 @@
+import pyttsx3
 from functions import * 
 # Imports {
     # sys 
@@ -6,14 +7,14 @@ from functions import *
     # BootMails {SendMails}
     # OpenFile
 # }
-
-# LogIN("2019-CE-34")
-
+if os.path.exists(os.getcwd(), "LOCAL"):
+    Boot()
+else:
+    Bool = input("Do you want to reboot the system (Y/N): ").lower()
+    if Bool == "y":
+        Boot()
 # Boot()
-# print("Opening the public Notifications...")
-# OPEN(os.path.join("Notis", "Noti.jpeg"))
 
-import pyttsx3
 
 engine = pyttsx3.init()
 
@@ -22,8 +23,8 @@ engine.setProperty('voice', voices[1].id)
 def Start():
     engine.say("Waiting for you command!")
     engine.runAndWait()
-    # text = speak(engine)
-    text = "scan"
+    text = speak(engine)
+    # text = "scan"
     print(text)
     Command(engine, text)
     
