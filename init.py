@@ -7,12 +7,7 @@ from functions import *
     # BootMails {SendMails}
     # OpenFile
 # }
-if os.path.exists(os.path.join(os.getcwd(), "LOCAL")):
-    Boot()
-else:
-    Bool = input("Do you want to reboot the system (Y/N): ").lower()
-    if Bool == "y":
-        Boot()
+
 # Boot()
 
 
@@ -29,6 +24,12 @@ def Start():
     Command(engine, text)
     
 if __name__ == '__main__':
+    if os.path.exists(os.path.join(os.getcwd(), "LOCAL")):
+        Boot()
+    else:
+        Bool = input("Do you want to reboot the system (Y/N): ").lower()
+        if Bool == "y":
+            Boot()
     while True:
         c = input("Enter space to start or any other character to exit: ")
         if c == " ":
