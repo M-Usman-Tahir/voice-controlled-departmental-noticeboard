@@ -18,8 +18,8 @@ engine.setProperty('voice', voices[1].id)
 def Start():
     engine.say("Waiting for you command!")
     engine.runAndWait()
-    # text = speak(engine)
-    text = "scan"
+    text = speak(engine)
+    # text = "scan"
     print(text)
     Command(engine, text)
     
