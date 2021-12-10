@@ -90,4 +90,3 @@ def sendMail(body, SenderName = "Computer Engineering Departmental Notification"
                 print("Mail is sent to", receiver)
         except Exception as e:
             print("MAIL IS NOT SENT BECAUSE:", e)
-        # return True

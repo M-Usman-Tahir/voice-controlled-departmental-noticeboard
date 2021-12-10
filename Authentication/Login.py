@@ -1,12 +1,7 @@
-# import os
-# CurrentDir = os.getcwd()
-# print(CurrentDir)
-
 import SysPaths as SP
 import os
 from OpenFile import *
-from textToSpeech import *
-from init import engine
+from Speech import *
 
 def FunList(List):
     rtnList = "\n"

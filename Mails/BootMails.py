@@ -4,7 +4,6 @@ import os
 
 def SendBootCre(data, rec=None, Topic="Student"):
     Data = data.split('\n')
-    # print(Data)
     if Topic=="Student":
         Name = " ".join(Data[0].split()[1:])
         Roll = Data[1].split()[1]
