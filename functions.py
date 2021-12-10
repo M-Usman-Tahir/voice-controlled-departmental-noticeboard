@@ -2,8 +2,9 @@
     Takes all funstions here for the main file]
 """
 
+from SysPaths import *
 from SetNoti import *
-from textToSpeech import * # imports speech_recognition as sr
+from Speech import * # imports speech_recognition as sr
 from BOOT import * # imports pandas as pd, os, PasswordGenerator
 from BootMails import * # imports SendmMails
 from Login import *
@@ -40,5 +41,3 @@ def Command(text):
         N=getNum(TEXT)
         OPEN(os.path.join(SocietyPath, dirs[N-1]))
         
-    pass
-    
