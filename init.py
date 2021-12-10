@@ -18,18 +18,19 @@ engine.setProperty('voice', voices[1].id)
 def Start():
     engine.say("Waiting for you command!")
     engine.runAndWait()
-    # text = speak(engine)
-    text = "scan"
+    text = speak()
+    # text = "scan"
     print(text)
-    Command(engine, text)
+    Command(text)
     
 if __name__ == '__main__':
-    if os.path.exists(os.path.join(os.getcwd(), "LOCAL")):
-        Boot()
-    else:
-        Bool = input("Do you want to reboot the system (Y/N): ").lower()
-        if Bool == "y":
-            Boot()
+    Boot()
+    # if not os.path.exists(os.path.join(os.getcwd(), "LOCAL")):
+    #     Boot()
+    # else:
+    #     Bool = input("Do you want to reboot the system (Y/N): ").lower()
+    #     if Bool == "y":
+    #         Boot()
     while True:
         c = input("Enter space to start or any other character to exit: ")
         if c == " ":

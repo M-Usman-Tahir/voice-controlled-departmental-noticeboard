@@ -23,6 +23,7 @@ def AskNoti():
     C_Noti = input("Enter the path of the notification: ")
     T_Path = os.path.join(GetPath(), os.path.split(C_Noti)[1])
     os.replace(C_Noti, T_Path)
+    # ! sendMailNoti(T_path)
 
 if __name__ == '__main__':
     AskNoti()
