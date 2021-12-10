@@ -1,6 +1,4 @@
-output/
 __pycache__/
-
 
 LOCAL/
 Details/
@@ -12,7 +10,5 @@ Details/
 
 EncCre.txt
 Test.py
-data.txt
-Structure.json
 
 !LoginRecord.csv
