@@ -1,4 +1,3 @@
-import pyttsx3
 from functions import * 
 # Imports {
     # sys 
@@ -11,10 +10,6 @@ from functions import *
 # Boot()
 
 
-engine = pyttsx3.init()
-
-voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
 def Start():
     engine.say("Waiting for you command!")
     engine.runAndWait()
