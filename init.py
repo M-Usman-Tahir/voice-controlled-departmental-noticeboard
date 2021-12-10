@@ -24,7 +24,7 @@ def Start():
     Command(engine, text)
     
 if __name__ == '__main__':
-    if os.path.exists(os.path.join(os.getcwd(), "LOCAL")):
+    if not os.path.exists(os.path.join(os.getcwd(), "LOCAL")):
         Boot()
     else:
         Bool = input("Do you want to reboot the system (Y/N): ").lower()
