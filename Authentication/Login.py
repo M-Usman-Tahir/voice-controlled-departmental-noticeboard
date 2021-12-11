@@ -4,12 +4,28 @@ from OpenFile import *
 from Speech import *
 
 def FunList(List):
+    """[Takes list and prints it vertically assigning each item its index number on CLI]
+
+    Args:
+        List ([string]): [The items to be displayed]
+
+    Returns:
+        [string]: [a string displaying entries vertically with its indexes]
+    """
     rtnList = "\n"
     for i in range(len(List)):
         rtnList += f"{i+1} - {List[i]}\n"
     return rtnList
 
 def getNum(text):
+    """[Takes in the text and return the number in it.]
+
+    Args:
+        text ([string]): [text from which an int is to be taken]
+
+    Returns:
+        [int]: [smallest number found in the text]
+    """
     for i in numbers:
         if i in text:
             print(i)
@@ -18,6 +34,12 @@ def getNum(text):
     return text
 
 def LogIN(name):
+    # ! Incomplete/Unorganized
+    """[Login to the account and shows the notifications of the user]
+
+    Args:
+        name ([string]): [The name or ID of the user]
+    """
     if "CE" in name:
         path = os.path.join(StudentPath, "Session-{}".format(name.split("-")[0]), name)
     else:
