@@ -4,9 +4,9 @@
 ## Clone the project
 First of all Fork the repo.
 
-Then type the following command on the terminal to clone the repo keeping in mind to replace the 'your-user-name' with your github user name.
+Then type the following command on the terminal to clone the repo keeping in mind to replace the `{your-user-name}` with your github user name.
 ```terminal
-git clone https://github.com/your-user-name/voice-controlled-departmental-noticeboard
+git clone https://github.com/{your-user-name}/voice-controlled-departmental-noticeboard
 ```
 Now you need to move to the project directory.
 ```terminal
@@ -25,6 +25,15 @@ virtualenv venv
 Now activate the virtual environment
 ```terminal
 venv/Scripts/activate
+```
+In case your PC is not allowing the virtual environment to activate, then open the `Windows Powershell` with `Open as administrator` and type the following command on its shell.
+```powershell
+Set-ExecutionPolicy Unrestricted -Force
+```
+Then try activating the virtualenv again.  
+And to deactivate the virtual environment in any case type following in the terminal where it is activated.
+```terminal
+deactivate
 ```
 
 ## Requirements
