@@ -22,10 +22,20 @@ def findEncodings(images):
     return encodeList
 
 def TimeSec():
+    """[Takes current time in and convert into seconds.]
+
+    Returns:
+        [float]: [Time in seconds]
+    """
     now = datetime.now()
     return now.second+(now.minute*60)+(now.hour*60*60)
 
 def Login(ID):
+    """[Takes ID of the person logged in and write the time of login of that person in a csv]
+
+    Args:
+        ID ([string]): [ID of the person who has logged in]
+    """
     with open(os.path.join(AuthPath,'LoginRecord.csv'),'a') as f:
         now = datetime.now()
         dateStr = now.strftime('%d-%m-%y')
