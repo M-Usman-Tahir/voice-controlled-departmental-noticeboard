@@ -1,6 +1,6 @@
 import pandas as pd
 from Cre import *
-from BootMails import *
+from Mails.BootMails import *
 
 
 def StructureBoot(part, check="Reg_No"):

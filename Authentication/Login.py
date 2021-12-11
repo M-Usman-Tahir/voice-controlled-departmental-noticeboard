@@ -1,4 +1,4 @@
-import SysPaths as SP
+from SysPaths import *
 import os
 from OpenFile import *
 from Speech import *
@@ -19,9 +19,9 @@ def getNum(text):
 
 def LogIN(name):
     if "CE" in name:
-        path = os.path.join(SP.StudentPath, "Session-{}".format(name.split("-")[0]), name)
+        path = os.path.join(StudentPath, "Session-{}".format(name.split("-")[0]), name)
     else:
-        path = os.path.join(SP.FacultyPath, name)
+        path = os.path.join(FacultyPath, name)
     dirs = os.listdir(path)
     dirs.remove("CREs.txt")
     if len(dirs)>0:
