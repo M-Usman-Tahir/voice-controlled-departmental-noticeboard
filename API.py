@@ -8,3 +8,6 @@ from BOOT import * # imports pandas as pd, os, PasswordGenerator
 from Mails.BootMails import * # imports SendmMails
 from Authentication.FaceDetection import * # import SysPaths
 
+f"""
+{detectFace()}
+"""
