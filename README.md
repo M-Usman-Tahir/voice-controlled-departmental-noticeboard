@@ -35,6 +35,7 @@ And to deactivate the virtual environment in any case type following in the term
 ```terminal
 deactivate
 ```
+But donot deactivate while working on the project (***Recommended***).
 
 ## Requirements
 
