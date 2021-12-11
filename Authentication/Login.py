@@ -1,6 +1,6 @@
 from SysPaths import *
 import os
-from OpenFile import *
+from Authentication.OpenFile import *
 from Speech import *
 
 def FunList(List):

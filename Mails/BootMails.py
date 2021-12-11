@@ -1,4 +1,4 @@
-from SendMails import *
+from Mails.SendMails import *
 from SysPaths import TemplatesPath
 import os
 

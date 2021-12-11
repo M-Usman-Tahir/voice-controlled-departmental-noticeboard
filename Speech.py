@@ -3,6 +3,7 @@ import pyttsx3
 from SysPaths import *
 from Authentication.OpenFile import *
 from Authentication.Login import *
+from Authentication.FaceDetection import *
 
 engine = pyttsx3.init()
 

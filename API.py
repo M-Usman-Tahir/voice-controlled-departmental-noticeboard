@@ -9,5 +9,7 @@ from Mails.BootMails import * # imports SendmMails
 from Authentication.FaceDetection import * # import SysPaths
 
 f"""
-{detectFace()}
+API Functions
+{detectFace}
+
 """
