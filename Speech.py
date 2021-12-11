@@ -1,6 +1,8 @@
 import speech_recognition as sr
 import pyttsx3
-
+from SysPaths import *
+from Authentication.OpenFile import *
+from Authentication.Login import *
 
 engine = pyttsx3.init()
 
@@ -8,6 +10,11 @@ voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
 def say(text):
+    """[It narrates up the text and wait until all the text is spoken out.]
+
+    Args:
+        text ([string]): [the text to be narrated.]
+    """
     engine.say(text)
     engine.runAndWait()
 
@@ -63,3 +70,34 @@ def IfIn(words, text, opr="or"):
             continue
         return False
     return True
+
+
+def Command(text):
+    if IfIn(["log", "in"], text, "and") or "scan" in text:
+        name = detectFace()
+        if name != "Not Found":
+            LogIN(name)
+        else:
+            say("No matching face detected!")
+    if IfIn(["opportunity", "opportunities"], text):
+        dirs = os.listdir(OpportunityPath)
+        print(FunList(dirs))
+        say("Say the number of notification to open")
+        TEXT = speak(engine)
+        N=getNum(TEXT)
+        OPEN(os.path.join(OpportunityPath, dirs[N-1]))
+    if IfIn(["public", "department"], text):
+        dirs = os.listdir(DepartmentPath)
+        print(FunList(dirs))
+        say("Say the number of notification to open")
+        TEXT = speak(engine)
+        N=getNum(TEXT)
+        OPEN(os.path.join(DepartmentPath, dirs[N-1]))
+    if IfIn(["society", "societies"], text):
+        dirs = os.listdir(SocietyPath)
+        print(FunList(dirs))
+        say("Say the number of notification to open")
+        TEXT = speak(engine)
+        N=getNum(TEXT)
+        OPEN(os.path.join(SocietyPath, dirs[N-1]))
+        
