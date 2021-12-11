@@ -62,7 +62,7 @@ pip install [path-to-downloaded-pyaudio-wheel]
 ### Step 5
 Now install all the other requirements.
 ```terminal
-pip install -r requiremnets.txt
+pip install -r requirements.txt
 ```
 
 ## How to run
