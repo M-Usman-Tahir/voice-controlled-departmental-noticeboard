@@ -6,6 +6,14 @@ from datetime import datetime
 from SysPaths import *
  
 def findEncodings(images):
+    """[It finds encodings through opencv of images]
+
+    Args:
+        images ([type]): [description]
+
+    Returns:
+        [list]: [encodings of the images]
+    """
     encodeList = []
     for img in images:
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -25,6 +33,12 @@ def Login(ID):
         f.writelines(f'{ID},{dtString},{dateStr}\n')
 
 def detectFace():
+    """[It starts the camera and match with encodings of pictures in 'LoginFaces' directory.
+    It only detect for 5 seconds from the webcam.]
+
+    Returns:
+        [string]: [If it matches it return the name of the pic and if not it return 'Not Found']
+    """
     name = "Not Found"
     path = os.path.join(AuthPath, "LoginFaces")
     print(path)
@@ -58,11 +72,12 @@ def detectFace():
         
             if matches[matchIndex]:
                 name = classNames[matchIndex]
-                y1,x2,y2,x1 = faceLoc
-                y1, x2, y2, x1 = y1*4,x2*4,y2*4,x1*4
-                cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
-                cv2.rectangle(img,(x1,y2-35),(x2,y2),(0,255,0),cv2.FILLED)
-                cv2.putText(img,name,(x1+6,y2-6),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
+                # * Following commands are not important but will create a sqaure around the detected face and the name under it.
+                # y1,x2,y2,x1 = faceLoc
+                # y1, x2, y2, x1 = y1*4,x2*4,y2*4,x1*4
+                # cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
+                # cv2.rectangle(img,(x1,y2-35),(x2,y2),(0,255,0),cv2.FILLED)
+                # cv2.putText(img,name,(x1+6,y2-6),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
                 Login(name)
                 notMatched = False
                 break
