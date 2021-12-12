@@ -27,7 +27,7 @@ def getNum(text):
         [int]: [smallest number found in the text]
     """
     for i in numbers:
-        if i in text:
+        if f"{i}" in text:
             print(i)
             return numbers[i]
     print(text)
