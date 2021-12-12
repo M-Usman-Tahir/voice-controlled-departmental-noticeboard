@@ -7,6 +7,7 @@ from Speech import * # imports speech_recognition as sr
 from BOOT import * # imports pandas as pd, os, PasswordGenerator
 from Mails.BootMails import * # imports SendmMails
 from Authentication.FaceDetection import * # import SysPaths
+from Commands import *
 
 f"""
 API Functions
