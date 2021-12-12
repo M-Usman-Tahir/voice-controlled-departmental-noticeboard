@@ -1,3 +1,4 @@
+from Cre import *
 from SysPaths import *
 import os
 from Authentication.OpenFile import *
@@ -31,20 +32,39 @@ def getNum(text):
             print(i)
             return numbers[i]
     print(text)
-    return text
+    return "Not found"
 
-def LogIN(name):
-    # ! Incomplete/Unorganized
-    """[Login to the account and shows the notifications of the user]
+
+def LogIN(name, password = None, found = True):
+    """[check the credentials and sends back the path and list of notifications of the user]
 
     Args:
-        name ([string]): [The name or ID of the user]
+        name ([string]): [Name or user name of the user]
+        password ([string], optional): [password of the user if he is trying to login through credentials]. Defaults to None.
+        found (bool, optional): [if he logs in through face detection then it will be true otherwise password will be needed]. Defaults to True.
+
+    Returns:
+        [string]: [the path of user's data storage]
+        [list]: [list of notifications in the user's account]
     """
     if "CE" in name:
         path = os.path.join(StudentPath, "Session-{}".format(name.split("-")[0]), name)
     else:
         path = os.path.join(FacultyPath, name)
     dirs = os.listdir(path)
+    if not found:
+        with open(os.path.join(path, "CREs.txt"), "r") as data:
+            Data = data.read().split("\n")[3].split(": ")[1]
+            Password = DC(Data)
+            if password == Password:
+                return path, dirs
+            else:
+                say("Invalid Credentials. Please try again.")
+                print("Invalid Credentials. Please try again.")
+                return False
+    else:
+        return path, dirs
+def Open_Noti(path, dirs):
     dirs.remove("CREs.txt")
     if len(dirs)>0:
         while True:
@@ -56,9 +76,12 @@ def LogIN(name):
                 print(TEXT)
                 N=getNum(TEXT)
                 print(N)
+                if N == "Not found":
+                    say("Please say some number")
                 if N == 0:
                     break
-                OPEN(os.path.join(path, dirs[N-1]))
+                else:
+                    OPEN(os.path.join(path, dirs[N-1]))
             except Exception as e:
                 print(e)
                 say(e)
@@ -68,7 +91,8 @@ def LogIN(name):
         say("There are no notifications yet.")
 
 
-numbers = {"one":1,
+numbers = {"zero":0,
+           "one":1,
            "two":2,
            "three":3,
            "four":4,
@@ -77,6 +101,7 @@ numbers = {"one":1,
            "seven":7,
            "eight":8,
            "nine":9,
+           0:0,
            1:1,
            2:2,
            3:3,
