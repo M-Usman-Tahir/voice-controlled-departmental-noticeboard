@@ -54,7 +54,7 @@ def detectFace():
     print(path)
     images = []
     classNames = []
-    myList = [x for x in os.listdir(path) if '.jpg' in x]
+    myList = os.listdir(path)
     for cl in myList:
         curImg = cv2.imread(os.path.join(path, cl))
         images.append(curImg)
