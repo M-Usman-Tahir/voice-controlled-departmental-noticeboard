@@ -28,7 +28,7 @@ def AskCRE():
     say("Please enter your login credentails")
     name = input("Enter your Name: ")
     Pass = input("Enter your password: ")
-    return name, Pass
+    return name.upper(), Pass
     
 
 def Command(text):
