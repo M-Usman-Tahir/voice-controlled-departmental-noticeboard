@@ -72,3 +72,6 @@ Now run the following command, it will Boot the structure and will start working
 ```terminal
 python init.py
 ```
+
+## Contribute to project
+You can also contribute to the project. Read the instructions [here](Contributing.md). I will be more than happy to see your participation.
