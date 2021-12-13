@@ -1,4 +1,3 @@
-
 from Authentication.Login import *
 from Authentication.FaceDetection import *
            
@@ -25,17 +24,29 @@ def IfIn(words, text, opr="or"):
         return False
     return True
 
-# def AskCRE():
-#     name = input("")
+def AskCRE():
+    say("Please enter your login credentails")
+    name = input("Enter your Name: ")
+    Pass = input("Enter your password: ")
+    return name.upper(), Pass
+    
 
 def Command(text):
     if IfIn(["log", "in"], text, "and") or "scan" in text:
         name = detectFace()
         if name != "Not Found":
-            LogIN(name)
+            try:
+                path, ListDirs = LogIN(name)
+            except Exception as e:
+                say(e)
+                print(e)
+                return
         else:
             say("No matching face detected!")
-            # AskCRE()
+            name, Pass = AskCRE()
+            path, ListDirs = LogIN(name, Pass, False)
+        ListDirs.remove("CREs.txt")
+        Open_Noti(path, ListDirs)
     if IfIn(["opportunity", "opportunities"], text):
         dirs = os.listdir(OpportunityPath)
         print(FunList(dirs))
