@@ -196,3 +196,11 @@ class Ui_MainWindow(object):
         self.lineEdit_6.setText(_translate("MainWindow", "SIGNUP"))
         self.btnSignup.setText(_translate("MainWindow", "SIGNUP"))
         self.label_7.setText(_translate("MainWindow", "Already have an account??"))
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

@@ -50,7 +50,7 @@ class Ui_MainWindow(object):
 "text-align: center;")
         self.infotext.setObjectName("infotext")
         self.uetlogo = QtWidgets.QLabel(self.widget)
-        self.uetlogo.setGeometry(QtCore.QRect(68, 50, 111, 101))
+        self.uetlogo.setGeometry(QtCore.QRect(50, 60, 120, 110))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(63)
@@ -103,7 +103,7 @@ class Ui_MainWindow(object):
 "letter-spacing: 2 px;")
         self.back_button.setObjectName("back_button")
         self.cslogo = QtWidgets.QLabel(self.widget)
-        self.cslogo.setGeometry(QtCore.QRect(680, 51, 111, 101))
+        self.cslogo.setGeometry(QtCore.QRect(700, 60, 120, 110))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(63)
@@ -130,3 +130,12 @@ class Ui_MainWindow(object):
         item = self.eventstable.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Notified Date"))
         self.back_button.setText(_translate("MainWindow", "Back"))
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

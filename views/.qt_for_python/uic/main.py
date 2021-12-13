@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'loginmain.ui'
+# Form implementation generated from reading ui file 'c:\Users\Precision\Desktop\abc\main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,27 +14,23 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(753, 630)
-        MainWindow.setMinimumSize(QtCore.QSize(753, 630))
-        MainWindow.setMaximumSize(QtCore.QSize(753, 630))
+        MainWindow.resize(729, 576)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(307, 282, 211, 31))
+        self.lineEdit.setGeometry(QtCore.QRect(271, 282, 211, 31))
         self.lineEdit.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color:#365372;\n"
 "border:none;\n"
 "border-radius:0px;")
         self.lineEdit.setObjectName("lineEdit")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(-20, -10, 775, 630))
-        self.widget.setMinimumSize(QtCore.QSize(775, 630))
-        self.widget.setMaximumSize(QtCore.QSize(775, 630))
+        self.widget.setGeometry(QtCore.QRect(-20, -10, 741, 571))
         self.widget.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0.278, x2:0.573, y2:0.784091, stop:0 rgba(1, 38, 78, 255), stop:1 rgba(171, 119, 143, 255));")
         self.widget.setObjectName("widget")
         self.label = QtWidgets.QLabel(self.widget)
-        self.label.setGeometry(QtCore.QRect(350, 140, 121, 121))
+        self.label.setGeometry(QtCore.QRect(314, 140, 121, 121))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(63)
@@ -43,17 +39,17 @@ class Ui_MainWindow(object):
         self.label.setMinimumSize(QtCore.QSize(0, 0))
         self.label.setStyleSheet("background-color:none;")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("src/user (3).png"))
+        self.label.setPixmap(QtGui.QPixmap("c:\\Users\\Precision\\Desktop\\abc\\src/user (3).png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.widget)
-        self.label_2.setGeometry(QtCore.QRect(236, 190, 341, 241))
+        self.label_2.setGeometry(QtCore.QRect(200, 190, 341, 241))
         self.label_2.setStyleSheet("background-color:#c5bacc;\n"
 " border-radius: 10px ;")
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.widget)
-        self.label_3.setGeometry(QtCore.QRect(296, 292, 31, 31))
+        self.label_3.setGeometry(QtCore.QRect(260, 292, 31, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(63)
@@ -62,11 +58,11 @@ class Ui_MainWindow(object):
         self.label_3.setMinimumSize(QtCore.QSize(0, 0))
         self.label_3.setStyleSheet("background-color:#01264E;")
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("src/user (3).png"))
+        self.label_3.setPixmap(QtGui.QPixmap("c:\\Users\\Precision\\Desktop\\abc\\src/user (3).png"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.widget)
-        self.label_4.setGeometry(QtCore.QRect(296, 330, 31, 31))
+        self.label_4.setGeometry(QtCore.QRect(260, 330, 31, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(63)
@@ -75,11 +71,11 @@ class Ui_MainWindow(object):
         self.label_4.setMinimumSize(QtCore.QSize(0, 0))
         self.label_4.setStyleSheet("background-color:#01264E;")
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("src/padlock.png"))
+        self.label_4.setPixmap(QtGui.QPixmap("c:\\Users\\Precision\\Desktop\\abc\\src/padlock.png"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.pushButton = QtWidgets.QPushButton(self.widget)
-        self.pushButton.setGeometry(QtCore.QRect(284, 442, 251, 41))
+        self.pushButton.setGeometry(QtCore.QRect(248, 437, 251, 41))
         self.pushButton.setMouseTracking(False)
         self.pushButton.setStyleSheet("background-color:#c5bacc;\n"
 "border-radius:10px;\n"
@@ -89,13 +85,13 @@ class Ui_MainWindow(object):
         self.pushButton.setCheckable(False)
         self.pushButton.setObjectName("pushButton")
         self.radioButton = QtWidgets.QRadioButton(self.widget)
-        self.radioButton.setGeometry(QtCore.QRect(299, 390, 101, 21))
+        self.radioButton.setGeometry(QtCore.QRect(263, 390, 101, 21))
         self.radioButton.setStyleSheet("background-color:#c5bacc;\n"
 "border-radius:20px;\n"
 "letter-spacing:1px;")
         self.radioButton.setObjectName("radioButton")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.widget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(326, 330, 211, 31))
+        self.lineEdit_2.setGeometry(QtCore.QRect(290, 330, 211, 31))
         self.lineEdit_2.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color:#365372;\n"
 "border:none;\n"
@@ -103,7 +99,7 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.widget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(453, 390, 113, 20))
+        self.lineEdit_3.setGeometry(QtCore.QRect(417, 390, 113, 20))
         font = QtGui.QFont()
         font.setItalic(False)
         font.setKerning(True)
@@ -122,6 +118,13 @@ class Ui_MainWindow(object):
         self.widget.raise_()
         self.lineEdit.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 729, 21))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -134,12 +137,3 @@ class Ui_MainWindow(object):
         self.radioButton.setText(_translate("MainWindow", "Remember Me"))
         self.lineEdit_2.setPlaceholderText(_translate("MainWindow", " Password"))
         self.lineEdit_3.setText(_translate("MainWindow", "Forget password"))
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
