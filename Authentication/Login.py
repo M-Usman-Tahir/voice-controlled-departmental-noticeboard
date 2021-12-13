@@ -64,8 +64,8 @@ def LogIN(name, password = None, found = True):
                 return False
     else:
         return path, dirs
+
 def Open_Noti(path, dirs):
-    dirs.remove("CREs.txt")
     if len(dirs)>0:
         while True:
             print(FunList(dirs))

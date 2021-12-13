@@ -36,14 +36,17 @@ def Command(text):
         name = detectFace()
         if name != "Not Found":
             try:
-                LogIN(name)
+                path, ListDirs = LogIN(name)
             except Exception as e:
                 say(e)
                 print(e)
+                return
         else:
             say("No matching face detected!")
             name, Pass = AskCRE()
-            LogIN(name, Pass, False)
+            path, ListDirs = LogIN(name, Pass, False)
+        ListDirs.remove("CREs.txt")
+        Open_Noti(path, ListDirs)
     if IfIn(["opportunity", "opportunities"], text):
         dirs = os.listdir(OpportunityPath)
         print(FunList(dirs))
