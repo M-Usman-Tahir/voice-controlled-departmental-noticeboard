@@ -21,7 +21,7 @@ Change or add the things what you think can make the app better.
 First of all you need to check if there are any new commts in the main repo or in other words that your repo is behind the main repo.
 <br>
 
-![](Contribution/pic1.png)
+![](Contribution/pic1.png)  
 Click on the `Fetch upstream` drop down button.
 
 ![](Contribution/pic2.png)  
