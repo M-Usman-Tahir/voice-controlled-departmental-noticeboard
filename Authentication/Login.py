@@ -66,6 +66,12 @@ def LogIN(name, password = None, found = True):
         return path, dirs
 
 def Open_Noti(path, dirs):
+    """[It shows the dirs in CLI with indexes and then the user chooses the number to open it]
+
+    Args:
+        path ([string]): [the path of user's data storage]
+        dirs ([list]): [list of notifications in the user's account]
+    """
     if len(dirs)>0:
         while True:
             print(FunList(dirs))
