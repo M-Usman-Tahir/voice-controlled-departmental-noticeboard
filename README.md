@@ -78,3 +78,6 @@ You can also contribute to the project. Read the instructions [here](Contributin
 
 ## Code Of Conduct
 You can also read our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## License
+[MIT license](LICENSE)
