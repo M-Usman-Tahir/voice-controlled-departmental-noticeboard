@@ -51,7 +51,7 @@ def detectFace():
     """
     name = "Not Found"
     path = os.path.join(AuthPath, "LoginFaces")
-    print(path)
+    # print(path)
     images = []
     classNames = []
     myList = os.listdir(path)
@@ -61,7 +61,7 @@ def detectFace():
         classNames.append(os.path.splitext(cl)[0])
     
     encodeListKnown = findEncodings(images)
-    print('Encoding Complete')
+    print('Detecting your face ...')
     
     cap = cv2.VideoCapture(0)
     notMatched = True
@@ -82,7 +82,7 @@ def detectFace():
         
             if matches[matchIndex]:
                 name = classNames[matchIndex]
-                # * Following commands are not important but will create a sqaure around the detected face and the name under it.
+                # * Following commands are not important but will create a square around the detected face and the name under it.
                 # y1,x2,y2,x1 = faceLoc
                 # y1, x2, y2, x1 = y1*4,x2*4,y2*4,x1*4
                 # cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)

@@ -11,7 +11,8 @@ from API import *
 
 
 def Start():
-    engine.say("Waiting for you command!")
+    print("Go ahead! I'm listening ...")
+    engine.say("Go ahead! I'm listening ...")
     engine.runAndWait()
     text = speak()
     # text = "scan"
