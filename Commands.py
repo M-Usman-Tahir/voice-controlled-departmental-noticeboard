@@ -25,7 +25,8 @@ def IfIn(words, text, opr="or"):
     return True
 
 def AskCRE():
-    say("Please enter your login credentails")
+    say("Enter your credentials")
+    print("Enter your credentials")
     name = input("Enter your Name: ")
     Pass = input("Enter your password: ")
     return name.upper(), Pass
@@ -42,30 +43,39 @@ def Command(text):
                 print(e)
                 return
         else:
-            say("No matching face detected!")
+            say("Facial Recognition failed")
             name, Pass = AskCRE()
             path, ListDirs = LogIN(name, Pass, False)
         ListDirs.remove("CREs.txt")
         Open_Noti(path, ListDirs)
     if IfIn(["opportunity", "opportunities"], text):
         dirs = os.listdir(OpportunityPath)
-        print(FunList(dirs))
-        say("Say the number of notification to open")
-        TEXT = speak()
-        N=getNum(TEXT)
-        OPEN(os.path.join(OpportunityPath, dirs[N-1]))
+        if not dirs:
+            say('No Notification found regarding opportunities')
+        else:
+            print(FunList(dirs))
+            say("Say the number of notification to open")
+            TEXT = speak()
+            N=getNum(TEXT)
+            OPEN(os.path.join(OpportunityPath, dirs[N-1]))
     if IfIn(["public", "department"], text):
         dirs = os.listdir(DepartmentPath)
-        print(FunList(dirs))
-        say("Say the number of notification to open")
-        TEXT = speak()
-        N=getNum(TEXT)
-        OPEN(os.path.join(DepartmentPath, dirs[N-1]))
+        if not dirs:
+            say('No Public Notification found')
+        else:
+            print(FunList(dirs))
+            say("Say the number of notification to open")
+            TEXT = speak()
+            N=getNum(TEXT)
+            OPEN(os.path.join(DepartmentPath, dirs[N-1]))
     if IfIn(["society", "societies"], text):
-        dirs = os.listdir(SocietyPath)
-        print(FunList(dirs))
-        say("Say the number of notification to open")
-        TEXT = speak()
-        N=getNum(TEXT)
-        OPEN(os.path.join(SocietyPath, dirs[N-1]))
-        
+            dirs = os.listdir(SocietyPath)
+            if not dirs:
+                say('No Updates regarding societies')
+            else:
+                print(FunList(dirs))
+                say("Say the number of notification to open")
+                TEXT = speak()
+                N=getNum(TEXT)
+                OPEN(os.path.join(SocietyPath, dirs[N-1]))
+            
