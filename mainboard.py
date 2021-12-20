@@ -236,8 +236,7 @@ class Ui_MainWindow(object):
         Boot()
         # print('Voice Assistant Activated')
         print("Go ahead! I'm listening ...")
-        engine.say("Go ahead! I'm listening ...")
-        engine.runAndWait()
+        say("Go ahead! I'm listening ...")
         text = speak()
         # text = "scan"
         print(text)
