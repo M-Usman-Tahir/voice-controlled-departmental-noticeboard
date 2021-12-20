@@ -14,7 +14,7 @@ from API import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(850, 690)
+        MainWindow.resize(750, 690)
         MainWindow.setMinimumSize(QtCore.QSize(850, 690))
         MainWindow.setMaximumSize(QtCore.QSize(850, 16777215))
         MainWindow.setStyleSheet("")
@@ -66,6 +66,14 @@ class Ui_MainWindow(object):
 " border-radius: 10px ;")
         self.eventbox.setText("")
         self.eventbox.setObjectName("eventbox")
+        self.commandbox = QtWidgets.QLabel(self.background)
+        self.commandbox.setStyleSheet("background-color:none;")
+        self.commandbox.setGeometry(QtCore.QRect(380, 170, 0, 0))
+        self.commandbox.setStyleSheet("background-color:#c5bacc;\n"
+" border-radius: 10px ;")
+        self.commandbox.setStyleSheet("background-color:none;")
+        self.commandbox.setText("Welcome")
+        self.commandbox.setObjectName("commandbox")
         self.perslbox = QtWidgets.QLabel(self.background)
         self.perslbox.setGeometry(QtCore.QRect(575, 357, 161, 241))
         self.perslbox.setStyleSheet("background-color:#c5bacc;\n"
@@ -217,9 +225,16 @@ class Ui_MainWindow(object):
 #  !  function to execute on push button click
 #     def logging(self):
 #             print('Clicking the Push Button')
+
+    def showOutput(self, msg):
+        self.commandbox.adjustSize()
+        self.commandbox.setText(msg)
+        self.commandbox.adjustSize()
+        
     def startProcess(self):
+        self.showOutput("Go ahead! I'm listening")
         Boot()
-        print('Voice Assistant Activated')
+        # print('Voice Assistant Activated')
         print("Go ahead! I'm listening ...")
         engine.say("Go ahead! I'm listening ...")
         engine.runAndWait()
@@ -231,7 +246,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Voice Controlled Departmental NoticeBoard"))
         self.notifpushButton.setText(_translate("MainWindow", "NOTIFICATION"))
         self.opporpushButton.setText(_translate("MainWindow", "OPPORTUNITIES"))
         self.eventpushButton.setText(_translate("MainWindow", "EVENTS"))
