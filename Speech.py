@@ -34,15 +34,13 @@ def speak():
         try:
             return r.recognize_google(audio)            
         except sr.UnknownValueError:
-            engine.say("I'm not sure. I understand")
+            say("I'm not sure. I can't understand. Please repeat.")
             return ""
         except sr.RequestError as e:
-            engine.say("Check your Internet connection; {0}".format(e))
-            return ""
+            say("You Internet connection is not stable or connected, try again after troubleshooting. {0}".format(e))
+            exit()
         except Exception as e:
-            engine.say("Oooops, something went wrong: ")
-            engine.say(str(e))
+            say("Oooops, something went wrong: ")
+            say(str(e))
             print(e)
             return ""
-        finally:
-            engine.runAndWait()
