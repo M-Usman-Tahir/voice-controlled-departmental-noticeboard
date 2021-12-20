@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from API import *
 from notis import Ui_MainNotificationWindow
 from opportunities import Ui_MainOpportunitiesWindow
+from events import Ui_MainEventsWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -100,6 +101,7 @@ class Ui_MainWindow(object):
         self.opporpushButton.setObjectName("opporpushButton")
         self.eventpushButton = QtWidgets.QPushButton(self.background)
         self.eventpushButton.setGeometry(QtCore.QRect(423, 556, 131, 31))
+        self.eventpushButton.clicked.connect(self.eventsWindow)
         self.eventpushButton.setMouseTracking(False)
         self.eventpushButton.setStyleSheet("background-color:#01264e;\n"
 "border-radius:10px;\n"
@@ -221,6 +223,8 @@ class Ui_MainWindow(object):
 #     def logging(self):
 #             print('Clicking the Push Button')
 
+ # * New Windows Opening functions
+
     def notificationWindow(self):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_MainNotificationWindow()
@@ -233,11 +237,13 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
-    def notificationWindow(self):
+    def eventsWindow(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_MainNotificationWindow()
+        self.ui = Ui_MainEventsWindow()
         self.ui.setupUi(self.window)
         self.window.show()
+
+ # * Label text updating function
 
     def showOutput(self, msg):
         self.commandbox.adjustSize()
