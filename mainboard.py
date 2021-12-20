@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from API import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -135,7 +136,7 @@ class Ui_MainWindow(object):
 "background-color:white;")
         self.maintext.setObjectName("maintext")
         self.pushButton_Start = QtWidgets.QPushButton(self.background)
-        self.pushButton_Start.setGeometry(QtCore.QRect(440, 630, 75, 23))
+        self.pushButton_Start.setGeometry(QtCore.QRect(89, 630, 75, 23))
         self.pushButton_Start.setStyleSheet("background-color:#01264e;\n"
 "border-radius:10px;\n"
 "color:white;\n"
@@ -217,7 +218,16 @@ class Ui_MainWindow(object):
 #     def logging(self):
 #             print('Clicking the Push Button')
     def startProcess(self):
-            print('Voice Assistant Activated')
+        Boot()
+        print('Voice Assistant Activated')
+        print("Go ahead! I'm listening ...")
+        engine.say("Go ahead! I'm listening ...")
+        engine.runAndWait()
+        text = speak()
+        # text = "scan"
+        print(text)
+        Command(text)
+            
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
