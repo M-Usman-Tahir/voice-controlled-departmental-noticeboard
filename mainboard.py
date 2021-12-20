@@ -252,6 +252,7 @@ class Ui_MainWindow(object):
 
     def startProcess(self):
         self.commandbox.clear()
+        self.commandbox.setText('')
         self.showOutput("Go ahead! I'm listening")
         Boot()
         # print('Voice Assistant Activated')
@@ -261,7 +262,7 @@ class Ui_MainWindow(object):
         # text = "scan"
         print(text)
         self.showOutput(text)
-        Command(text)
+        Command(text, self)
             
 
     def retranslateUi(self, MainWindow):
