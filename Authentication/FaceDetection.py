@@ -30,7 +30,7 @@ def TimeSec():
     now = datetime.now()
     return now.second+(now.minute*60)+(now.hour*60*60)
 
-def Login(ID):
+def Loggedin(ID):
     """[Takes ID of the person logged in and write the time of login of that person in a csv]
 
     Args:
@@ -88,7 +88,6 @@ def detectFace():
                 # cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
                 # cv2.rectangle(img,(x1,y2-35),(x2,y2),(0,255,0),cv2.FILLED)
                 # cv2.putText(img,name,(x1+6,y2-6),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
-                Login(name)
                 notMatched = False
                 break
             
