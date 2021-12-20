@@ -9,8 +9,8 @@ from Mails.BootMails import * # imports SendmMails
 from Authentication.FaceDetection import * # import SysPaths
 from Commands import *
 
-f"""
-API Functions
-{detectFace}
-
+"""
+Every Functions can be called in the API File.
+Simply import the API by `from API import *` and 
+use all the functions in that file/module.
 """
