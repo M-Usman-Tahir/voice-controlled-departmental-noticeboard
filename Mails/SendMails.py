@@ -66,7 +66,6 @@ def sendMail(body, SenderName = "Computer Engineering Departmental Notification"
         [boolean]: [If mail is sent it will be true and vice versa]
     """
     CREs = EnCre("EncCre.txt")
-    print(CREs)
     Sender_Name = SenderName
     sender_email = CREs[1]
     password = CREs[2]

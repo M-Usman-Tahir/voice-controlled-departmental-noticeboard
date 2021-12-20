@@ -12,8 +12,7 @@ from API import *
 
 def Start():
     print("Go ahead! I'm listening ...")
-    engine.say("Go ahead! I'm listening ...")
-    engine.runAndWait()
+    say("Go ahead! I'm listening ...")
     text = speak()
     # text = "scan"
     print(text)
@@ -21,15 +20,11 @@ def Start():
     
 if __name__ == '__main__':
     Boot()
-    # if not os.path.exists(os.path.join(os.getcwd(), "LOCAL")):
-    #     Boot()
-    # else:
-    #     Bool = input("Do you want to reboot the system (Y/N): ").lower()
-    #     if Bool == "y":
-    #         Boot()
     while True:
         c = input("Enter space to start or any other character to exit: ")
         if c == " ":
             Start()
-        else:
+        elif c == "admin":
+            AskNoti()
+        elif c == "":
             exit()
