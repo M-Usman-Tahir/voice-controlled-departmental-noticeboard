@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from API import *
 from notis import Ui_MainNotificationWindow
+from opportunities import Ui_MainOpportunitiesWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -89,6 +90,7 @@ class Ui_MainWindow(object):
         self.opporpushButton = QtWidgets.QPushButton(self.background)
         self.opporpushButton.setGeometry(QtCore.QRect(259, 554, 131, 31))
         self.opporpushButton.setMouseTracking(False)
+        self.opporpushButton.clicked.connect(self.opportunitiesWindow)
         self.opporpushButton.setStyleSheet("background-color:#01264e;\n"
 "border-radius:10px;\n"
 "color:white;\n"
@@ -218,6 +220,18 @@ class Ui_MainWindow(object):
 #  !  function to execute on push button click
 #     def logging(self):
 #             print('Clicking the Push Button')
+
+    def notificationWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainNotificationWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def opportunitiesWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainOpportunitiesWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
     def notificationWindow(self):
         self.window = QtWidgets.QMainWindow()
