@@ -35,7 +35,7 @@ def getNum(text):
     return "Not found"
 
 
-def LogIN(name, password = None, found = True):
+def LogIN(name, password=None, found=True):
     """[check the credentials and sends back the path and list of notifications of the user]
 
     Args:
@@ -48,7 +48,8 @@ def LogIN(name, password = None, found = True):
         [list]: [list of notifications in the user's account]
     """
     if "CE" in name:
-        path = os.path.join(StudentPath, "Session-{}".format(name.split("-")[0]), name)
+        path = os.path.join(
+            StudentPath, "Session-{}".format(name.split("-")[0]), name)
     else:
         path = os.path.join(FacultyPath, name)
     dirs = os.listdir(path)
@@ -65,6 +66,7 @@ def LogIN(name, password = None, found = True):
     else:
         return path, dirs
 
+
 def Open_Noti(path, dirs):
     """[It shows the dirs in CLI with indexes and then the user chooses the number to open it]
 
@@ -72,18 +74,18 @@ def Open_Noti(path, dirs):
         path ([string]): [the path of user's data storage]
         dirs ([list]): [list of notifications in the user's account]
     """
-    if len(dirs)>0:
+    if len(dirs) > 0:
         while True:
             print(FunList(dirs))
-            print("Enter the Number of notification to see: ")
+            print("Say the Number of notification to see: ")
             try:
                 say("Say the number to open the notification!")
                 TEXT = speak()
                 print(TEXT)
-                N=getNum(TEXT)
+                N = getNum(TEXT)
                 print(N)
                 if N == "Not found":
-                    say("Please say some number")
+                    say("Couldn't get any number. Please say some number")
                 if N == 0:
                     break
                 else:
@@ -97,26 +99,29 @@ def Open_Noti(path, dirs):
         say("There are no notifications yet.")
 
 
-numbers = {"zero":0,
-           "one":1,
-           "two":2,
-           "three":3,
-           "four":4,
-           "five":5,
-           "six":6,
-           "seven":7,
-           "eight":8,
-           "nine":9,
-           0:0,
-           1:1,
-           2:2,
-           3:3,
-           4:4,
-           5:5,
-           6:6,
-           7:7,
-           8:8, 
-           9:9}
+numbers = {"zero": 0,
+           "back": 0,
+           "one": 1,
+           "two": 2,
+           "to": 2,
+           "too": 2,
+           "three": 3,
+           "four": 4,
+           "five": 5,
+           "six": 6,
+           "seven": 7,
+           "eight": 8,
+           "nine": 9,
+           0: 0,
+           1: 1,
+           2: 2,
+           3: 3,
+           4: 4,
+           5: 5,
+           6: 6,
+           7: 7,
+           8: 8,
+           9: 9}
 
 
 if __name__ == '__main__':
