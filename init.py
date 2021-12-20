@@ -25,5 +25,7 @@ if __name__ == '__main__':
         c = input("Enter space to start or any other character to exit: ")
         if c == " ":
             Start()
-        else:
+        elif c == "admin":
+            AskNoti()
+        elif c == "":
             exit()
