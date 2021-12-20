@@ -1,5 +1,8 @@
 __pycache__/
 
+/build
+/dist
+
 LOCAL/
 output/
 Details/
