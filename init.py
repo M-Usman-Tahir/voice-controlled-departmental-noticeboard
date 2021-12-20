@@ -12,8 +12,7 @@ from API import *
 
 def Start():
     print("Go ahead! I'm listening ...")
-    engine.say("Go ahead! I'm listening ...")
-    engine.runAndWait()
+    say("Go ahead! I'm listening ...")
     text = speak()
     # text = "scan"
     print(text)

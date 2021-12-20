@@ -64,7 +64,7 @@ def Command(text):
             TEXT = speak()
             N=getNum(TEXT)
             OPEN(os.path.join(OpportunityPath, dirs[N-1]))
-    if IfIn(["public", "department"], text):
+    if IfIn(["public", "department", "departmental"], text):
         dirs = os.listdir(DepartmentPath)
         if not dirs:
             say('No Public Notification found')
