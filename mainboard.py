@@ -3,6 +3,7 @@ from API import *
 from notis import Ui_MainNotificationWindow
 from opportunities import Ui_MainOpportunitiesWindow
 from events import Ui_MainEventsWindow
+from loginmain import Ui_MainLoginWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -120,6 +121,7 @@ class Ui_MainWindow(object):
 "letter-spacing: 2 px;")
         self.perslpushButton.setCheckable(False)
         self.perslpushButton.setObjectName("perslpushButton")
+        self.perslpushButton.clicked.connect(self.loginWindow)
         self.eventimg = QtWidgets.QLabel(self.background)
         self.eventimg.setGeometry(QtCore.QRect(420, 360, 141, 151))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -240,6 +242,13 @@ class Ui_MainWindow(object):
     def eventsWindow(self):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_MainEventsWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+        self.window.show()
+
+    def loginWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainLoginWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 
