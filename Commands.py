@@ -38,14 +38,20 @@ def Command(text):
         if name != "Not Found":
             try:
                 path, ListDirs = LogIN(name)
+                Loggedin(name)
             except Exception as e:
                 say(e)
                 print(e)
                 return
         else:
-            say("Facial Recognition failed")
+            say("Facial Recognition failed...")
             name, Pass = AskCRE()
-            path, ListDirs = LogIN(name, Pass, False)
+            try:
+                path, ListDirs = LogIN(name, Pass, False)
+                Loggedin(name)
+            except:
+                say("Ooopss, it seems you forgot your password.")
+                print("Ooopss, it seems you forgot your password.")
         ListDirs.remove("CREs.txt")
         Open_Noti(path, ListDirs)
     if IfIn(["opportunity", "opportunities"], text):

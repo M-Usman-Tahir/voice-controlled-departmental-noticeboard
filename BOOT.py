@@ -20,7 +20,7 @@ def StructureBoot(part, check="Reg_No"):
                 try:
                     os.mkdir(os.path.join(NewPath, i))
                 except:
-                    pass
+                    continue
                 try:
                     if part == "Student":
                         Name = list(file1[file1[check]==i]["Name"])[0]
