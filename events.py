@@ -10,8 +10,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from mainboard import Ui_MainWindow
-
 
 class Ui_MainEventsWindow(object):
     def setupUi(self, MainWindow):
