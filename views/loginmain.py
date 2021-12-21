@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
 "border-radius:0px;")
         self.lineEdit.setObjectName("lineEdit")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(-20, -10, 775, 630))
+        self.widget.setGeometry(QtCore.QRect(0, 0, 775, 630))
         self.widget.setMinimumSize(QtCore.QSize(775, 630))
         self.widget.setMaximumSize(QtCore.QSize(775, 630))
         self.widget.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0.278, x2:0.573, y2:0.784091, stop:0 rgba(1, 38, 78, 255), stop:1 rgba(171, 119, 143, 255));")

@@ -22,7 +22,7 @@ class Ui_MainNotificationWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(-10, 0, 850, 690))
+        self.widget.setGeometry(QtCore.QRect(0, 0, 850, 690))
         self.widget.setMinimumSize(QtCore.QSize(850, 690))
         self.widget.setMaximumSize(QtCore.QSize(850, 690))
         font = QtGui.QFont()
