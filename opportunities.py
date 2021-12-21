@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
+lst=[("Ikram","Khan"),("Usman","Tahir"),("Ali","Naqi"), ("Tajammul", "Naeem")]
 class Ui_MainOpportunitiesWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -131,6 +131,12 @@ class Ui_MainOpportunitiesWindow(object):
         item = self.OPPORTUNITIEStable.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Notified Date"))
         self.back_button.setText(_translate("MainWindow", "Back"))
+        self.oppor_list()
+
+    def oppor_list(self):
+        for ls, i in zip(lst, range(0, len(lst))):
+            self.OPPORTUNITIEStable.setItem(i,0,QtWidgets.QTableWidgetItem(ls[0]))
+            self.OPPORTUNITIEStable.setItem(i,1,QtWidgets.QTableWidgetItem(ls[1]))
 
 if __name__ == "__main__":
     import sys
