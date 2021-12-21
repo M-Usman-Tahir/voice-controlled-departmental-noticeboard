@@ -14,12 +14,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(775, 645)
+        MainWindow.resize(750, 690)
+        MainWindow.move(265,10)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(-20, -100, 871, 751))
+        self.widget.setGeometry(QtCore.QRect(0, 0, 750, 690))
         self.widget.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0.278, x2:0.573, y2:0.784091, stop:0 rgba(1, 38, 78, 255), stop:1 rgba(171, 119, 143, 255));")
         self.widget.setObjectName("widget")
         self.label = QtWidgets.QLabel(self.widget)

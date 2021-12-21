@@ -19,12 +19,14 @@ def Start():
     Command(text)
     
 if __name__ == '__main__':
-    Boot()
-    while True:
-        c = input("Enter space to start or any other character to exit: ")
-        if c == " ":
-            Start()
-        elif c == "admin":
-            AskNoti()
-        elif c == "":
-            exit()
+    print("Write `python mainboard.py` to run from the GUI Screen...")
+    exit()
+    # Boot()
+    # while True:
+    #     c = input("Enter space to start or any other character to exit: ")
+    #     if c == " ":
+    #         Start()
+    #     elif c == "admin":
+    #         AskNoti()
+    #     elif c == "":
+    #         exit()

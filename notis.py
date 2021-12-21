@@ -14,7 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainNotificationWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(850, 690)
+        MainWindow.resize(750, 690)
+        MainWindow.move(265,10)
         MainWindow.setMinimumSize(QtCore.QSize(850, 690))
         MainWindow.setMaximumSize(QtCore.QSize(850, 690))
         MainWindow.setStyleSheet("")

@@ -14,7 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainOpportunitiesWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(850, 690)
+        MainWindow.resize(750, 690)
+        MainWindow.move(265,10)
         MainWindow.setMinimumSize(QtCore.QSize(850, 690))
         MainWindow.setMaximumSize(QtCore.QSize(850, 690))
         MainWindow.setStyleSheet("")
@@ -135,7 +136,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Ui_MainOpportunitiesWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
