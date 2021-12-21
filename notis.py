@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
+lst=[("Ikram","Khan"),("Usman","Tahir"),("Ali","Naqi"), ("Tajammul", "Naeem")]
 class Ui_MainNotificationWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -64,13 +65,13 @@ class Ui_MainNotificationWindow(object):
         self.uetlogo.setScaledContents(True)
         self.uetlogo.setObjectName("uetlogo")
         self.notificatiotable = QtWidgets.QTableWidget(self.widget)
-        self.notificatiotable.setGeometry(QtCore.QRect(176, 303, 531, 271))
+        self.notificatiotable.setGeometry(QtCore.QRect(176, 303, 531, 25+len(lst)*30))
         self.notificatiotable.setStyleSheet("background-color:#c5bacc;\n"
 " border-radius: 10px ;\n"
 "self.tablewidget.setColumWidth:(0,233);")
         self.notificatiotable.setShowGrid(True)
         self.notificatiotable.setGridStyle(QtCore.Qt.SolidLine)
-        self.notificatiotable.setRowCount(8)
+        self.notificatiotable.setRowCount(len(lst))
         self.notificatiotable.setColumnCount(2)
         self.notificatiotable.setObjectName("notificatiotable")
         item = QtWidgets.QTableWidgetItem()
@@ -94,6 +95,7 @@ class Ui_MainNotificationWindow(object):
         self.notificatiotable.verticalHeader().setDefaultSectionSize(30)
         self.notificatiotable.verticalHeader().setSortIndicatorShown(False)
         self.notificatiotable.verticalHeader().setStretchLastSection(True)
+        # self.notificatiotable.setItem(0,0,QtWidgets.QTableWidgetItem("Ikram Khan"))
         self.back_button = QtWidgets.QPushButton(self.widget)
         self.back_button.setGeometry(QtCore.QRect(631, 587, 75, 23))
         self.back_button.setMouseTracking(True)
@@ -102,6 +104,7 @@ class Ui_MainNotificationWindow(object):
 "color:white;\n"
 "font: 75 10pt \"Tahoma\";\n"
 "letter-spacing: 2 px;")
+        
         self.back_button.setObjectName("back_button")
         self.cslogo = QtWidgets.QLabel(self.widget)
         self.cslogo.setGeometry(QtCore.QRect(700, 60, 120, 110))
@@ -131,6 +134,15 @@ class Ui_MainNotificationWindow(object):
         item = self.notificatiotable.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Notified Date"))
         self.back_button.setText(_translate("MainWindow", "Back"))
+        self.table_list()
+
+    def table_list(self):
+        i=0
+        for ls, i in zip(lst, range(0, len(lst))):
+            self.notificatiotable.setItem(i,0,QtWidgets.QTableWidgetItem(ls[0]))
+            self.notificatiotable.setItem(i,1,QtWidgets.QTableWidgetItem(ls[1]))
+        
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
