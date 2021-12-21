@@ -88,6 +88,9 @@ class Ui_MainLoginWindow(object):
 "letter-spacing: 2 px;")
         self.pushButton.setCheckable(False)
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.name_login)
+        self.pushButton.clicked.connect(self.email_login)
+        
         self.radioButton = QtWidgets.QRadioButton(self.widget)
         self.radioButton.setGeometry(QtCore.QRect(299, 390, 101, 21))
         self.radioButton.setStyleSheet("background-color:#c5bacc;\n"
@@ -134,7 +137,16 @@ class Ui_MainLoginWindow(object):
         self.radioButton.setText(_translate("MainWindow", "Remember Me"))
         self.lineEdit_2.setPlaceholderText(_translate("MainWindow", " Password"))
         self.lineEdit_3.setText(_translate("MainWindow", "Forget password"))
+        
 
+    def name_login(self):
+            print(str(self.lineEdit.text()))
+        #     print(self.name)
+        
+            
+    def email_login(self):
+            print(str(self.lineEdit_2.text()))
+        #     print(self.email)
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

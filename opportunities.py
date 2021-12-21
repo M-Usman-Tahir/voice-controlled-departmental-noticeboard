@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainOpportunitiesWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(750, 690)
+        MainWindow.resize(753, 630)
         MainWindow.move(265,10)
         MainWindow.setMinimumSize(QtCore.QSize(850, 690))
         MainWindow.setMaximumSize(QtCore.QSize(850, 690))
@@ -22,7 +22,7 @@ class Ui_MainOpportunitiesWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(-10, 0, 850, 690))
+        self.widget.setGeometry(QtCore.QRect(0, 0, 850, 690))
         self.widget.setMinimumSize(QtCore.QSize(850, 690))
         self.widget.setMaximumSize(QtCore.QSize(850, 690))
         font = QtGui.QFont()
