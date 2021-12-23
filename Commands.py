@@ -24,9 +24,10 @@ def IfIn(words, text, opr="or"):
         return False
     return True
 
-def AskCRE():
+def AskCRE(window):
     say("Enter your credentials")
     print("Enter your credentials")
+    window.loginWindow()
     name = input("Enter your Name: ")
     Pass = input("Enter your password: ")
     return name.upper(), Pass
@@ -45,7 +46,7 @@ def Command(text, window):
                 return
         else:
             say("Facial Recognition failed...")
-            name, Pass = AskCRE()
+            name, Pass = AskCRE(window)
             try:
                 path, ListDirs = LogIN(name, Pass, False)
                 Loggedin(name)
