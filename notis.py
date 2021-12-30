@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-lst=[("Ikram","Khan"),("Usman","Tahir"),("Ali","Naqi"), ("Tajammul", "Naeem")]
+lst=[("Ikram","Khan"),("Usman","Tahir"),("Ali","Naqi")]
 class Ui_MainNotificationWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -137,7 +137,6 @@ class Ui_MainNotificationWindow(object):
         self.table_list()
 
     def table_list(self):
-        i=0
         for ls, i in zip(lst, range(0, len(lst))):
             self.notificatiotable.setItem(i,0,QtWidgets.QTableWidgetItem(ls[0]))
             self.notificatiotable.setItem(i,1,QtWidgets.QTableWidgetItem(ls[1]))

@@ -66,7 +66,7 @@ def Command(text, window):
             TEXT = speak()
             N=getNum(TEXT)
             OPEN(os.path.join(OpportunityPath, dirs[N-1]))
-    if IfIn(["public", "department", "departmental"], text):
+    if IfIn(["public", "department", "departmental","notification"], text):
         window.notificationWindow()
         dirs = os.listdir(DepartmentPath)
         if not dirs:

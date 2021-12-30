@@ -64,13 +64,13 @@ class Ui_MainOpportunitiesWindow(object):
         self.uetlogo.setScaledContents(True)
         self.uetlogo.setObjectName("uetlogo")
         self.OPPORTUNITIEStable = QtWidgets.QTableWidget(self.widget)
-        self.OPPORTUNITIEStable.setGeometry(QtCore.QRect(176, 303, 531, 271))
+        self.OPPORTUNITIEStable.setGeometry(QtCore.QRect(176, 303, 531, 25+len(lst)*30))
         self.OPPORTUNITIEStable.setStyleSheet("background-color:#c5bacc;\n"
 " border-radius: 10px ;\n"
 "self.tablewidget.setColumWidth:(0,233);")
         self.OPPORTUNITIEStable.setShowGrid(True)
         self.OPPORTUNITIEStable.setGridStyle(QtCore.Qt.SolidLine)
-        self.OPPORTUNITIEStable.setRowCount(8)
+        self.OPPORTUNITIEStable.setRowCount(len(lst))
         self.OPPORTUNITIEStable.setColumnCount(2)
         self.OPPORTUNITIEStable.setObjectName("OPPORTUNITIEStable")
         item = QtWidgets.QTableWidgetItem()

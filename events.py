@@ -4,14 +4,15 @@ lst=[("Proposal","December,23"),("Holidays","January,32"),("Ali","Naqi"), ("Taja
 class Ui_MainEventsWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(850, 690)
+        MainWindow.resize(750, 690)
+        MainWindow.move(265,10)
         MainWindow.setMinimumSize(QtCore.QSize(850, 690))
         MainWindow.setMaximumSize(QtCore.QSize(850, 690))
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(-10, 0, 850, 690))
+        self.widget.setGeometry(QtCore.QRect(0, 0, 850, 690))
         self.widget.setMinimumSize(QtCore.QSize(850, 690))
         self.widget.setMaximumSize(QtCore.QSize(850, 690))
         font = QtGui.QFont()
@@ -53,13 +54,13 @@ class Ui_MainEventsWindow(object):
         self.uetlogo.setScaledContents(True)
         self.uetlogo.setObjectName("uetlogo")
         self.eventstable = QtWidgets.QTableWidget(self.widget)
-        self.eventstable.setGeometry(QtCore.QRect(176, 303, 531, 271))
+        self.eventstable.setGeometry(QtCore.QRect(176, 303, 531, 25+len(lst)*30))
         self.eventstable.setStyleSheet("background-color:#c5bacc;\n"
 " border-radius: 10px ;\n"
 "self.tablewidget.setColumWidth:(0,233);")
         self.eventstable.setShowGrid(True)
         self.eventstable.setGridStyle(QtCore.Qt.SolidLine)
-        self.eventstable.setRowCount(8)
+        self.eventstable.setRowCount(len(lst))
         self.eventstable.setColumnCount(2)
         self.eventstable.setObjectName("eventstable")
         item = QtWidgets.QTableWidgetItem()

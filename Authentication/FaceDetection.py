@@ -41,6 +41,7 @@ def Loggedin(ID):
         dateStr = now.strftime('%d-%m-%y')
         dtString = now.strftime('%H:%M:%S')
         f.writelines(f'{ID},{dtString},{dateStr}\n')
+        
 
 def detectFace():
     """[It starts the camera and match with encodings of pictures in 'LoginFaces' directory.
