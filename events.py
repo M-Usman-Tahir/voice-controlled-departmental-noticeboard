@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
+lst=[("Proposal","December,23"),("Holidays","January,32"),("Ali","Naqi"), ("Tajammul", "Naeem")]
 class Ui_MainEventsWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -120,6 +120,15 @@ class Ui_MainEventsWindow(object):
         item = self.eventstable.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Notified Date"))
         self.back_button.setText(_translate("MainWindow", "Back"))
+        self.eve_list()
+
+
+    def eve_list(self):
+        for ls, i in zip(lst, range(0, len(lst))):
+            self.eventstable.setItem(i,0,QtWidgets.QTableWidgetItem(ls[0]))
+            self.eventstable.setItem(i,1,QtWidgets.QTableWidgetItem(ls[1]))
+
+
 
 if __name__ == "__main__":
     import sys
