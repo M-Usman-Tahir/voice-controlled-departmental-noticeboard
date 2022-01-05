@@ -254,6 +254,12 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
+    def personalnotificationWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainNotificationWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
  # * Label text updating function
 
     def showOutput(self, msg):
