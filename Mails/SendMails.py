@@ -69,7 +69,7 @@ def sendMail(body, SenderName = "Computer Engineering Departmental Notification"
     Sender_Name = SenderName
     sender_email = CREs[1]
     password = CREs[2]
-    print(sender_email, password)
+    # print(sender_email, password)
     receiver_email = CREs[3] if recievers == None else recievers
     if not isinstance(receiver_email, (list, tuple)):
         receiver_email = [receiver_email]
