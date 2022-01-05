@@ -10,10 +10,8 @@ def sendPDFMail(body, attachment, name = "Notification",SenderName = "Computer E
     Sender_Name = SenderName
     sender_email = CREs[1]
     password = CREs[2]
-    # subject = "An email from CE Department"
+    name = name+".pdf" if not "." in name else name
     body = "A new Notification added in Computer ENginnering Department..."
-    # sender_email =input("Enter your email please : ")
-    # password = input("Type your password and press enter: ") 
     receiver_email = CREs[3] if recievers == None else recievers
 
     message = MIMEMultipart()
@@ -30,7 +28,7 @@ def sendPDFMail(body, attachment, name = "Notification",SenderName = "Computer E
     encoders.encode_base64(attach_file)
     # f.close()
     # attach_file=MIMEApplication(open(attachment,"rb").read())
-    attach_file.add_header('Content-Disposition','attachment', filename=name+".pdf")
+    attach_file.add_header('Content-Disposition','attachment', filename=name)
     message.attach(attach_file)
     # Add HTML/plain-text parts to MIMEMultipart message
     # The email client will try to render the last part first
