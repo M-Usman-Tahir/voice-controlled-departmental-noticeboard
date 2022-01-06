@@ -14,33 +14,36 @@ def sendPDFMail(body, attachment, name = "Notification",SenderName = "Computer E
     body = "A new Notification added in Computer ENginnering Department..."
     receiver_email = CREs[3] if recievers == None else recievers
 
-    message = MIMEMultipart()
-    message = MIMEMultipart("alternative")
-    message["From"] = Sender_Name
-    message["To"] = receiver_email
-    message['Subject']= subject
+    if not isinstance(receiver_email, (list, tuple)):
+        receiver_email = [receiver_email]
+    for receiver in receiver_email:
+        message = MIMEMultipart()
+        message = MIMEMultipart("alternative")
+        message["From"] = Sender_Name
+        message["To"] = receiver
+        message['Subject']= subject
 
-    # Turn these into plain/html MIMEText objects
-    part1 = MIMEText(body, "plain")
-    # part2 = MIMEText(html, "html")
-    attach_file=MIMEBase('application',"octet-stream")
-    attach_file.set_payload(open(attachment,"rb").read())
-    encoders.encode_base64(attach_file)
-    # f.close()
-    # attach_file=MIMEApplication(open(attachment,"rb").read())
-    attach_file.add_header('Content-Disposition','attachment', filename=name)
-    message.attach(attach_file)
-    # Add HTML/plain-text parts to MIMEMultipart message
-    # The email client will try to render the last part first
-    message.attach(part1)
-    # message.attach(part2)
+        # Turn these into plain/html MIMEText objects
+        part1 = MIMEText(body, "plain")
+        # part2 = MIMEText(html, "html")
+        attach_file=MIMEBase('application',"octet-stream")
+        attach_file.set_payload(open(attachment,"rb").read())
+        encoders.encode_base64(attach_file)
+        # f.close()
+        # attach_file=MIMEApplication(open(attachment,"rb").read())
+        attach_file.add_header('Content-Disposition','attachment', filename=name)
+        message.attach(attach_file)
+        # Add HTML/plain-text parts to MIMEMultipart message
+        # The email client will try to render the last part first
+        message.attach(part1)
+        # message.attach(part2)
 
-    # Create secure connection with server and send email
-    context = ssl.create_default_context()
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message.as_string())
-        print("Mail Sent")
+        # Create secure connection with server and send email
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver, message.as_string())
+            print("Mail Sent")
 
 if __name__ == '__main__':
       sendPDFMail("Welldone", "E:\\Books\\Learn JAVA in one day and learn it well.pdf")

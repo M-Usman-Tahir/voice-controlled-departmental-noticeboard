@@ -84,7 +84,7 @@ def sendMail(body, SenderName = "Computer Engineering Departmental Notification"
         try:
             with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
                 server.login(sender_email, password)
-                print("Login successful")
+                # print("Login successful")
                 server.sendmail(sender_email, receiver, message.as_string())
                 print("Mail is sent to", receiver)
         except Exception as e:

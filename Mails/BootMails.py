@@ -8,7 +8,11 @@ def SendBootCre(data, rec=None, Topic="Student"):
         Name = " ".join(Data[0].split()[1:])
         Roll = Data[1].split()[1]
         Password = Data[3].split()[1]
-    print(Name, Roll, Password)
+    else:
+        Name = "Mr. Ramzan"
+        Roll = "administrator"
+        Password = data
+    # print(Name, Roll, Password) 
     with open(os.path.join(TemplatesPath, "Password.html"), "r") as file:
         body = file.read()
         body = Name.join(body.split("[STUDENT]"))
@@ -16,4 +20,4 @@ def SendBootCre(data, rec=None, Topic="Student"):
         body = Password.join(body.split("[GENERATED PASSWORD]"))
     
     body = (body, "html")
-    sendMail(body, subject="Account Created", recievers=[rec])
+    sendMail(body, subject="Account Created", recievers=rec)
