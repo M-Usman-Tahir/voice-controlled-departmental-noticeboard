@@ -92,7 +92,7 @@ def Open_Noti(path, dirs):
                     OPEN(os.path.join(path, dirs[N-1]))
             except Exception as e:
                 print(e)
-                say(e)
+                # say(e)
                 say("Please say that again...")
     else:
         print("There are no notifications yet.")
