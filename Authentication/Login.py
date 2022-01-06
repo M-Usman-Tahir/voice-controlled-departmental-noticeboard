@@ -100,6 +100,7 @@ def Open_Noti(path, dirs):
 
 
 numbers = {"zero": 0,
+           "logout": 0,
            "back": 0,
            "one": 1,
            "two": 2,
