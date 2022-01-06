@@ -5,7 +5,7 @@ __pycache__/
 
 LOCAL/
 output/
-Details/
+# Details/
 Notis/
 
 *.csv
