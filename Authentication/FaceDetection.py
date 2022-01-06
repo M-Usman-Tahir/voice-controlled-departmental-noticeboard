@@ -56,6 +56,7 @@ def detectFace():
     images = []
     classNames = []
     myList = os.listdir(path)
+    myList.remove("README.md")
     for cl in myList:
         curImg = cv2.imread(os.path.join(path, cl))
         images.append(curImg)
