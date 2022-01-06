@@ -24,16 +24,16 @@ def IfIn(words, text, opr="or"):
         return False
     return True
 
-def AskCRE(window):
+def AskCRE(window=""):
     say("Enter your credentials")
     print("Enter your credentials")
-    window.loginWindow()
+    # window.loginWindow()
     name = input("Enter your Name: ")
     Pass = input("Enter your password: ")
     return name.upper(), Pass
     
 
-def Command(text, window):
+def Command(text, window=""):
     if IfIn(["log", "in"], text, "and") or "scan" in text:
         name = detectFace()
         if name != "Not Found":
@@ -56,7 +56,7 @@ def Command(text, window):
         ListDirs.remove("CREs.txt")
         Open_Noti(path, ListDirs)
     if IfIn(["opportunity", "opportunities"], text):
-        window.opportunitiesWindow()
+        # window.opportunitiesWindow()
         dirs = os.listdir(OpportunityPath)
         if not dirs:
             say('No Notification found regarding opportunities')
@@ -67,7 +67,7 @@ def Command(text, window):
             N=getNum(TEXT)
             OPEN(os.path.join(OpportunityPath, dirs[N-1]))
     if IfIn(["public", "department", "departmental","notification"], text):
-        window.notificationWindow()
+        # window.notificationWindow()
         dirs = os.listdir(DepartmentPath)
         if not dirs:
             say('No Public Notification found')
@@ -78,7 +78,7 @@ def Command(text, window):
             N=getNum(TEXT)
             OPEN(os.path.join(DepartmentPath, dirs[N-1]))
     if IfIn(["society", "societies"], text):
-            window.eventsWindow()
+            # window.eventsWindow()
             dirs = os.listdir(SocietyPath)
             if not dirs:
                 say('No Updates regarding societies')
