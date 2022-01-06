@@ -2,6 +2,7 @@ import pandas as pd
 from Cre import *
 from Mails.BootMails import *
 
+listMails = []
 
 def StructureBoot(part, check="Reg_No"):
     CurrentDir = os.getcwd()
@@ -18,6 +19,8 @@ def StructureBoot(part, check="Reg_No"):
                 pass
             for i in file1[check]:
                 try:
+                    Email = list(file1[file1[check]==i]["Email"])[0]
+                    listMails.append(Email)
                     os.mkdir(os.path.join(NewPath, i))
                 except:
                     continue
@@ -25,7 +28,6 @@ def StructureBoot(part, check="Reg_No"):
                     if part == "Student":
                         Name = list(file1[file1[check]==i]["Name"])[0]
                         RollNum = i
-                        Email = list(file1[file1[check]==i]["Email"])[0]
                         Password = PasswordGenerator()
                         with open("{}.txt".format(os.path.join(NewPath, i, "CREs")), "w") as Cre:
                             Data = "Name: {}\nRoll_Number: {}\nEmail: {}\nPasswaord: {}\n".format(Name, RollNum, Email, Password)
